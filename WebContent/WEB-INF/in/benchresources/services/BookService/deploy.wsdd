@@ -1,0 +1,51 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from BookService WSDL service -->
+
+  <service name="BookServicePort" provider="java:RPC" style="document" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://benchresources.in/services/BookService/"/>
+      <parameter name="wsdlServiceElement" value="BookService"/>
+      <parameter name="schemaQualified" value="http://benchresources.in/entities/Book"/>
+      <parameter name="schemaUnqualified" value="http://benchresources.in/services/BookService/"/>
+      <parameter name="wsdlServicePort" value="BookServicePort"/>
+      <parameter name="className" value="in.benchresources.services.BookService.BookServiceSOAPBindingSkeleton"/>
+      <parameter name="wsdlPortType" value="IBookService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://benchresources.in/entities/Book"
+        qname="ns:>BookResponseType"
+        type="java:in.benchresources.entities.Book.BookResponseType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://benchresources.in/entities/Book"
+        qname="ns:>BookRequestType"
+        type="java:in.benchresources.entities.Book.BookRequestType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://benchresources.in/entities/Book"
+        qname="ns:>BookNameRequestType"
+        type="java:in.benchresources.entities.Book.BookNameRequestType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

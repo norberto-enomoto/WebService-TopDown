@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//src/in/benchresources/entities/Book/BookNameRequestType.java=UTF-8
+encoding//src/in/benchresources/entities/Book/BookRequestType.java=UTF-8
+encoding//src/in/benchresources/entities/Book/BookResponseType.java=UTF-8
+encoding//src/in/benchresources/services/BookService/BookService.java=UTF-8
+encoding//src/in/benchresources/services/BookService/BookServiceLocator.java=UTF-8
+encoding//src/in/benchresources/services/BookService/BookServiceSOAPBindingImpl.java=UTF-8
+encoding//src/in/benchresources/services/BookService/BookServiceSOAPBindingSkeleton.java=UTF-8
+encoding//src/in/benchresources/services/BookService/BookServiceSOAPBindingStub.java=UTF-8
+encoding//src/in/benchresources/services/BookService/IBookService.java=UTF-8
